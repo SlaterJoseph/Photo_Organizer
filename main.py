@@ -3,7 +3,7 @@ import time
 import shutil
 
 
-direct = "C:/Users/josep/VS Code Files/Kayla Anniversary/images/dates"
+direct = "INSERT PATH HERE TO FOLDER"
 created_files = set()
 
 for file in os.scandir(direct):
@@ -21,13 +21,13 @@ for file in os.scandir(direct):
         date = "-".join([chunks[i] for i in [1, 2, 4]])
 
         path = os.path.join(direct, date)
-        print(path)
+        # print(path)
         if path not in created_files:
             print('in creation')
             os.makedirs(path)
             created_files.add(path)
 
-        path_to_pic = os.path.join(direct, file.name)
+        path_to_file = os.path.join(direct, file.name)
         path_to_new = os.path.join(path, file.name)
         # print(os.path.exists(path_to_pic))
-        shutil.move(path_to_pic, path_to_new)
+        shutil.move(path_to_file, path_to_new)
